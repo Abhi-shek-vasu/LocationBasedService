@@ -8,6 +8,7 @@ public class LocationBasedServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LocationBasedServiceApplication.class, args);
+		System.out.println("helloworld");
 	}
 
 }
