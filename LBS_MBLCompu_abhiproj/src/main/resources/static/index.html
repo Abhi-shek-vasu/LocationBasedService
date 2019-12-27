@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Test</title>
+</head>
+<body onload="viewSensorData()">
+	<section>
+		<div class="container">
+			<p id="p1"></p>
+		</div>
+	</section>
+	<section>
+		<input id="t1" name="id" type="text">
+		<button id="b1" type="button" onclick="viewSensorData()">View</button>
+		<button id="b2" type="button" onclick="setSensorData()">Set</button>
+	</section>
+</body>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+function viewSensorData() {
+		$(document).ready(function () {
+	        $.ajax({
+	            type: "GET",
+	            url: "http://localhost:8080/getSensorData",
+	            contentType: "application/xml",
+	            dataType: "xml",
+	            success: function (xmlData) {                   
+	                console.log(xmlData);                  
+	                $("#p1").text($(xmlData).find("SensorData").text());
+	            },
+	            error: function (xhr) {
+	                alert(xhr.responseText);
+	            }
+	        });
+	    });
+	}
+	
+function setSensorData() {
+	var addData = "<SensorData>" + $("#t1").val() + "</SensorData>";
+	$(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/setSensorData",
+            contentType: "application/xml",
+            dataType: "xml",
+            data: addData,
+            success: function () {
+            	console.log("Success");
+                },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    });
+}
+</script>
+</html>

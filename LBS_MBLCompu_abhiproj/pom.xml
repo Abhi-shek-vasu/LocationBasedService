@@ -27,6 +27,32 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.eclipse.californium/californium-core -->
+      <dependency>
+           <groupId>org.eclipse.californium</groupId>
+           <artifactId>californium-core</artifactId>
+            <version>2.0.0</version>
+       </dependency>
+       <!-- https://mvnrepository.com/artifact/org.eclipse.californium/element-connector -->
+<dependency>
+    <groupId>org.eclipse.californium</groupId>
+    <artifactId>element-connector</artifactId>
+    <version>2.0.0</version>
+</dependency>
+       
+       	<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.json</groupId>
+    		<artifactId>json</artifactId>
+    		<version>20170516</version>
+		</dependency>
+		
+		
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
