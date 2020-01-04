@@ -13,10 +13,12 @@ import org.eclipse.californium.core.CoapServer;
 import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.eclipse.californium.core.server.resources.CoapExchange;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Sensor {
 
-	public static void main(String[] args) {
+	 {
 		
 		CoapServer server = new CoapServer();
 		

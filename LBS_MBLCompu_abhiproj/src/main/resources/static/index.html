@@ -1,41 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Test</title>
+
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
-<body onload="viewSensorData()">
-	<section>
-		<div class="container">
-			<p id="p1"></p>
-		</div>
-	</section>
-	<section>
-		<input id="t1" name="id" type="text">
-		<button id="b1" type="button" onclick="viewSensorData()">View</button>
-		<button id="b2" type="button" onclick="setSensorData()">Set</button>
-	</section>
+<body onload="viewLocationData();viewGateData();viewAlarmData()">
+	
+	
+	
+	
+	
+	
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p id="p1"/>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p id="p2"/>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p id="p3"/>
+    </div>
+  </div>
+  </div>
+	
 </body>
 <script src="jquery-3.4.1.min.js"></script>
 <script>
-function viewSensorData() {
-		$(document).ready(function () {
-	        $.ajax({
-	            type: "GET",
-	            url: "http://localhost:8080/getSensorData",
-	            contentType: "application/xml",
-	            dataType: "xml",
-	            success: function (xmlData) {                   
-	                console.log(xmlData);                  
-	                $("#p1").text($(xmlData).find("SensorData").text());
-	            },
-	            error: function (xhr) {
-	                alert(xhr.responseText);
-	            }
-	        });
-	    });
-	}
+
+
 	
+function viewLocationData() {
+	$(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/getLocData",
+            contentType: "application/xml",
+            dataType: "xml",
+            success: function (xmlData) {                   
+                console.log(xmlData);                  
+                $("#p1").text($(xmlData).find("LocationData").text());
+            },
+            complete: function(){
+            	setTimeout(viewLocationData,5000);
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    });
+}
+	
+function viewAlarmData() {
+	$(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/getAlarmData",
+            contentType: "application/xml",
+            dataType: "xml",
+            success: function (xmlData) {                   
+                console.log(xmlData);                  
+                $("#p2").text($(xmlData).find("AlarmData").text());
+            },
+            complete: function(){
+            	setTimeout(viewAlarmData,1000);
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    });
+}
+function viewGateData() {
+	$(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/getGateData",
+            contentType: "application/xml",
+            dataType: "xml",
+            success: function (xmlData) {                   
+                console.log(xmlData);                  
+                $("#p3").text($(xmlData).find("GateData").text());
+            },
+            complete: function(){
+            	setTimeout(viewGateData,1000);
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    });
+}
 function setSensorData() {
 	var addData = "<SensorData>" + $("#t1").val() + "</SensorData>";
 	$(document).ready(function () {

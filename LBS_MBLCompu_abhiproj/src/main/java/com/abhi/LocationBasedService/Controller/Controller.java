@@ -44,6 +44,8 @@ public class Controller {
 		
 	}
 	
+	
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/setSensorData", consumes = "application/xml")
 	public void addTest(@RequestBody String xml) throws ConnectorException, IOException {
 		

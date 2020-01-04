@@ -11,10 +11,12 @@ import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Actuator {
 
-	public static void main(String[] args) {
+	 {
 		
 		CoapServer server = new CoapServer(5684);
 		
