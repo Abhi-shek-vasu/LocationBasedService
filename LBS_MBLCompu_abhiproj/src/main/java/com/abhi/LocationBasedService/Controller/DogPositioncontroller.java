@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LocationController {
+public class DogPositioncontroller {
 
 	@RequestMapping(value = "/getLocData", produces = "application/xml")
 	public String getLocationData() throws ConnectorException, IOException {
@@ -31,7 +31,8 @@ public class LocationController {
         	xml = XML.toString( json );
         	System.out.println( xml ); 
         	
-        	if(json.getInt("LocationData")>70) {        		
+        	if(json.getInt("LocationData")>70) {   
+        		System.out.println( json.getInt("LocationData") );
         		CoapClient client2 = new CoapClient("coap://localhost:5688/setAlarmData");	
     	        CoapResponse response2 = client2.post("{\"AlarmData\":\"ON\"}", MediaTypeRegistry.APPLICATION_JSON); 
     	        System.out.println( response2.getResponseText() );
@@ -41,6 +42,7 @@ public class LocationController {
     	        System.out.println( response3.getResponseText() );
         	}
         	else {
+        		System.out.println( json.getInt("LocationData") );
         		CoapClient client2 = new CoapClient("coap://localhost:5688/setAlarmData");	
     	        CoapResponse response2 = client2.post("{\"AlarmData\":\"OFF\"}", MediaTypeRegistry.APPLICATION_JSON); 
     	        System.out.println( response2.getResponseText() );

@@ -7,31 +7,33 @@ import java.io.IOException;
 
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.CoapServer;
-import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
+import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-@Component
-public class Actuator {
 
-	 {
+@Component
+public class HeaterActuator {
+	
+	public HeaterActuator() {
 		
-		CoapServer server = new CoapServer(5684);
+		CoapServer server = new CoapServer(5694);
 		
-		server.add(new SetSensorData());       
+		server.add(new SetHeaterData()); 
+		System.out.println("Heater Actuator started");
 
         server.start();
 
 	}
 	
-	public static class SetSensorData extends CoapResource {
-        public SetSensorData() {
+	public static class SetHeaterData extends CoapResource {
+        public SetHeaterData() {
         	
-            super("setSensorData");
+            super("SetHeaterData");
             
-            getAttributes().setTitle("Set Sensor Data");
+            getAttributes().setTitle("Set Heater Data");
         }
 
         @Override
@@ -41,12 +43,11 @@ public class Actuator {
 			exchange.respond(ResponseCode.CONTENT, "{\"message\":\"POST_REQUEST_SUCCESS\"}", MediaTypeRegistry.APPLICATION_JSON);
 			
 			JSONObject json = new JSONObject(exchange.getRequestText());
-			String data = json.get("SensorData").toString();
-			
+			String data = json.get("HeaterData").toString();
 			BufferedWriter bw = null;
 	        
 	        try {
-	        	bw = new BufferedWriter(new FileWriter(new File("Data.txt")));
+	        	bw = new BufferedWriter(new FileWriter(new File("HeaterData.txt")));
 	            bw.write(data);
 	        } 
 	        
@@ -61,7 +62,9 @@ public class Actuator {
 					e.printStackTrace();
 				}
 	        }
+			
+			
 		}
-    }
+}
 
 }

@@ -1,7 +1,5 @@
 package com.abhi.LocationBasedService.Controller;
 
-
-
 import java.io.IOException;
 
 import org.eclipse.californium.core.CoapClient;
@@ -16,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
+public class HeaterController {
 	
-	@RequestMapping(value = "/getSensorData", produces = "application/xml")
-	public String getSensorData() throws ConnectorException, IOException  {
+	@RequestMapping(value = "/getHeaterData", produces = "application/xml")
+	public String getHeaterData() throws ConnectorException, IOException {
 		
 		String xml = "";
 		
-		CoapClient client1 = new CoapClient("coap://localhost:5683/getSensorData");
+		CoapClient client1 = new CoapClient("coap://localhost:5693/getHeaterData");
         
         CoapResponse response1 = client1.get();
         
@@ -33,7 +31,7 @@ public class Controller {
         	System.out.println( response1.getResponseText() );
         	JSONObject json = new JSONObject(response1.getResponseText());
         	xml = XML.toString( json );
-        	System.out.println( xml );        	
+        	System.out.println( xml ); 
         }
         
         else {        	
@@ -43,13 +41,10 @@ public class Controller {
         return xml;
 		
 	}
-	
-	
-	
-	@RequestMapping(method = RequestMethod.POST, value = "/setSensorData", consumes = "application/xml")
-	public void addTest(@RequestBody String xml) throws ConnectorException, IOException {
+	@RequestMapping(method = RequestMethod.POST, value = "/setHeaterData", consumes = "application/xml")
+	public void setHeaterData(@RequestBody String xml) throws ConnectorException, IOException {
 		
-		CoapClient client2 = new CoapClient("coap://localhost:5684/setSensorData");
+		CoapClient client2 = new CoapClient("coap://localhost:5694/SetHeaterData");
 		
 		JSONObject json = XML.toJSONObject(xml);
 		
@@ -68,5 +63,6 @@ public class Controller {
         	System.out.println("Request failed");        	
         }
 	}
+
 
 }

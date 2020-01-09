@@ -5,41 +5,219 @@
 <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
 
+<style type="text/css">
+
+/* body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("./img/");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  } */
+.myheader{ text-align:center;
+           
+}
+
+#pageheader{
+               text-align:center;
+}
+
+
+
+.bg-4{
+   background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+ 
+}
+.bg1{
+ background-color:grey;
+
+
+}
+
+/* .header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+} */
+
+
+</style>
 </head>
-<body onload="viewLocationData();viewGateData();viewAlarmData()">
-	
-	
-	
-	
-	
-	
-	<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p id="p1"/>
+<body onload="viewLocationData();viewGateData();viewAlarmData();viewUserLocationData();viewLightData();viewHeaterData();">
+
+<div class="bg">
+
+<div class="container-fluid bg1">
+ 
+<div class="row">
+    <div class="col-sm-1">
+    <img id="img3" src="./img/LBSLOGO2.jpg" width="50">
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p id="p2"/>
+    <div class="col-sm-11 text-center">
+     <h3>Location Based Service<small>Smart home Application</small></h3>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p id="p3"/>
+   
     </div>
-  </div>
-  </div>
+</div> 
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="mt-2 col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">DogPositionData</h3>
+						<h6 class="card-subtitle mb-2 text-muted">values in meter</h6>
+						<p id="p1" />
+
+					</div>
+
+				</div>
+
+			 </div>
+
+			<div class="mt-2 col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Alarm</h3>
+						<img id="img2" width="200">
+						<p id="p2" />
+						
+
+					</div>
+				</div>
+			</div>
+
+			<div class=" mt-2 col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h1 class="card-title">Gate</h1>
+
+						<p id="p3" />
+
+					</div>
+
+				</div>
+
+			</div>
+			</div>
+		</div>
+			
+			<div class= "container-fluid my-3">
+			
+		
+		<div class="row">
+
+			<div class="col-sm-4">
+				<div class="card bg-secondary text-white" >
+					<div class="card-body" >
+						<h3 class="card-title">User Location Data</h3>
+						<h6 class="card-subtitle mb-2 text-muted">values in meter</h6>
+						<p id="p4" />
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Light</h3>
+						 <img id="img1" width="200">
+
+						<p id="p5" />
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">Heater</h3>
+
+						<p id="p6" />
+					</div>
+					<button id="button5" type="button" onclick="setHeaterData('ON')">Heater
+					ON</button>
+				<button id="button6" type="button" onclick="setHeaterData('OFF')">Heater
+					OFF</button>
+				</div>
+
+			</div>
+			</div>
+			
+	        <!-- <button id="button1" type="button" onclick="StartDogPosData()">START</button>
+			<button id="button2" type="button" onclick="StopDogPosData()">STOP</button> -->
+
+			<!-- <div>
+				<button id="button3" type="button" onclick="StartUserPosData()">START</button>
+				<button id="button4" type="button" onclick="StopUserPosData()">STOP</button>
+				<button id="button5" type="button" onclick="setHeaterData('ON')">Heater
+					ON</button>
+				<button id="button6" type="button" onclick="setHeaterData('OFF')">Heater
+					OFF</button>
+			</div> -->
+
+		</div>
+		
+	</div>
+	
+	<footer class="container-fluid bg-4 text-center">
+  <p>Frankfurt University of Applied science</p> 
+</footer>
 	
 </body>
+
 <script src="jquery-3.4.1.min.js"></script>
+
 <script>
 
-
+/* function StartDogPosData() {
+	viewLocationData();
+	viewAlarmData();
+	viewGateData();
+	interval1 = setInterval(viewLocationData,4000);
+	interval2 = setInterval(viewAlarmData,2000);
+	interval3 = setInterval(viewGateData,2000);
+}
+	function StopDogPosData() {
+		clearInterval(interval1);
+		clearInterval(interval2);
+		clearInterval(interval3);	
+}
 	
+	function StartUserPosData() {
+		viewUserLocationData();
+		viewLightData();
+		viewHeaterData();
+		interval4 = setInterval(viewUserLocationData,4000);
+		interval5 = setInterval(viewLightData,2000);
+		interval6 = setInterval(viewHeaterData,2000);
+	}
+	
+		function StopUserPosData() {
+			clearInterval(interval4);
+			clearInterval(interval5);
+		
+	} */
+		
+		
+
 function viewLocationData() {
 	$(document).ready(function () {
         $.ajax({
@@ -50,9 +228,10 @@ function viewLocationData() {
             success: function (xmlData) {                   
                 console.log(xmlData);                  
                 $("#p1").text($(xmlData).find("LocationData").text());
-            },
+            },   
             complete: function(){
-            	setTimeout(viewLocationData,5000);
+            	setTimeout(viewLocationData,4000);
+            	
             },
             error: function (xhr) {
                 alert(xhr.responseText);
@@ -69,11 +248,21 @@ function viewAlarmData() {
             contentType: "application/xml",
             dataType: "xml",
             success: function (xmlData) {                   
-                console.log(xmlData);                  
+                console.log(xmlData);    
                 $("#p2").text($(xmlData).find("AlarmData").text());
+                
+                if ($(xmlData).find("AlarmData").text() == "ON") {
+
+					$("#img2").attr('src','./img/sirenON.png');
+				} else if
+					($(xmlData).find("AlarmData").text() == "OFF")
+				{
+					$("#img2").attr('src','./img/sirenOFF.png');
+				}
             },
+            
             complete: function(){
-            	setTimeout(viewAlarmData,1000);
+            	setTimeout(viewAlarmData,2000);
             },
             error: function (xhr) {
                 alert(xhr.responseText);
@@ -81,6 +270,7 @@ function viewAlarmData() {
         });
     });
 }
+
 function viewGateData() {
 	$(document).ready(function () {
         $.ajax({
@@ -92,8 +282,53 @@ function viewGateData() {
                 console.log(xmlData);                  
                 $("#p3").text($(xmlData).find("GateData").text());
             },
+            
             complete: function(){
-            	setTimeout(viewGateData,1000);
+            	setTimeout(viewGateData,2000);
+            },
+            
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    });
+}
+
+function setHeaterData(value) {
+	console.log(value);
+	var heatdata ="<HeaterData>" + value + "</HeaterData>";
+	$(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/setHeaterData",
+            contentType: "application/xml",
+            dataType: "xml",
+            data:heatdata,
+            success: function () {
+            	console.log("Success");
+                },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+                
+        });
+    });
+}
+
+function viewUserLocationData() {
+	$(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/getUserLocSensorData",
+            contentType: "application/xml",
+            dataType: "xml",
+            success: function (xmlData) {                   
+                console.log(xmlData);                  
+                $("#p4").text($(xmlData).find("UserLocationData").text());
+            },  
+            complete: function(){
+            	setTimeout(viewUserLocationData,4000);
+            	
             },
             error: function (xhr) {
                 alert(xhr.responseText);
@@ -101,23 +336,58 @@ function viewGateData() {
         });
     });
 }
-function setSensorData() {
-	var addData = "<SensorData>" + $("#t1").val() + "</SensorData>";
-	$(document).ready(function () {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/setSensorData",
-            contentType: "application/xml",
-            dataType: "xml",
-            data: addData,
-            success: function () {
-            	console.log("Success");
-                },
-            error: function (xhr) {
-                alert(xhr.responseText);
-            }
-        });
-    });
-}
+	
+
+	function viewLightData() {
+		$(document).ready(function() {
+			$.ajax({
+				type : "GET",
+				url : "http://localhost:8080/getLightData",
+				contentType : "application/xml",
+				dataType : "xml",
+				success : function(xmlData) {
+					console.log(xmlData);
+					$("#p5").text($(xmlData).find("LightData").text());
+
+					if ($(xmlData).find("LightData").text() == "ON") {
+
+						$("#img1").attr('src','./img/LightBulbON.png');
+					} else if
+						($(xmlData).find("LightData").text() == "OFF")
+					{
+						$("#img1").attr('src','./img/LightBulbOff.png');
+					}
+				},
+				complete: function(){
+	            	setTimeout(viewLightData,2000);
+				},
+				error : function(xhr) {
+					alert(xhr.responseText);
+				}
+			});
+		});
+	}
+
+	function viewHeaterData() {
+		$(document).ready(function() {
+			$.ajax({
+				type : "GET",
+				url : "http://localhost:8080/getHeaterData",
+				contentType : "application/xml",
+				dataType : "xml",
+				success : function(xmlData) {
+					console.log(xmlData);
+					$("#p6").text($(xmlData).find("HeaterData").text());
+				},
+				 complete: function(){
+		            	setTimeout(viewHeaterData,1000);
+		            	
+		            },
+				error : function(xhr) {
+					alert(xhr.responseText);
+				}
+			});
+		});
+	}
 </script>
 </html>

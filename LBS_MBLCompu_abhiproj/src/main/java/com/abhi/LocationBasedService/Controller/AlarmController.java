@@ -16,7 +16,7 @@ public class AlarmController {
 	
 
 		@RequestMapping(value = "/getAlarmData", produces = "application/xml")
-		public String getLocationData() throws ConnectorException, IOException {
+		public String getAlarmData() throws ConnectorException, IOException {
 			
 			String xml = "";
 			
