@@ -36,12 +36,19 @@ public class UserLocationController {
 	        	CoapClient client2 = new CoapClient("coap://localhost:5692/setLightData");	
 	  	        CoapResponse response2 = client2.post("{\"LightData\":\"ON\"}", MediaTypeRegistry.APPLICATION_JSON); 
 	   	        System.out.println( response2.getResponseText() );
+	   	     CoapClient client3 = new CoapClient("coap://localhost:5694/SetWindowData");	
+	  	        CoapResponse response3 = client3.post("{\"windowData\":\"OPEN\"}", MediaTypeRegistry.APPLICATION_JSON); 
+	   	        System.out.println( response3.getResponseText() );
+	   	        
         }
         	else {
         		System.out.println( json.getInt("UserLocationData") );
         		CoapClient client2 = new CoapClient("coap://localhost:5692/setLightData");	
     	        CoapResponse response2 = client2.post("{\"LightData\":\"OFF\"}", MediaTypeRegistry.APPLICATION_JSON); 
     	        System.out.println( response2.getResponseText() );
+    	        CoapClient client3 = new CoapClient("coap://localhost:5694/SetWindowData");	
+    	        CoapResponse response3 = client3.post("{\"windowData\":\"CLOSE\"}", MediaTypeRegistry.APPLICATION_JSON); 
+    	        System.out.println( response3.getResponseText() );
         	}
         }
         

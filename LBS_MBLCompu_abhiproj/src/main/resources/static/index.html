@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Bootstrap Example</title>
+<title>A Mobile Computing Project WebApp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -11,23 +11,13 @@
 
 <style type="text/css">
 
-/* body, html {
-  height: 100%;
-  margin: 0;
-}
 
-.bg {
-  /* The image used */
-  background-image: url("./img/");
+/* .bg0{
 
-  /* Full height */
-  height: 100%; 
+background-image: url("./img/bg.jpeg");
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  } */
+} */
+  
 .myheader{ text-align:center;
            
 }
@@ -39,73 +29,106 @@
 
 
 .bg-4{
-   background-color: #2f2f2f; /* Black Gray */
+   background-color: #2f2f2f; 
     color: #fff;
  
 }
 .bg1{
- background-color:grey;
+ 
+ background-image: url("./img/IOTbg1.jpg");
+
+} 
 
 
+
+.text-block {
+  
+  color: white;
+  }
+  footer .copyright {
+  padding: 15px 0;
+  background: #333;
+  margin-top: 20px;
+  font-size: 15px;
 }
 
-/* .header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-} */
+footer {
+  background: #222;
+  color: #aaa;
+  padding-top: 10px;
+}
+
+.h3{
+
+text-align:center;}
+  
+ .inline{
+ 
+ display:inline;
+ }
+  
 
 
 </style>
 </head>
-<body onload="viewLocationData();viewGateData();viewAlarmData();viewUserLocationData();viewLightData();viewHeaterData();">
+<body onload="viewLocationData();viewGateData();viewAlarmData();viewUserLocationData();viewLightData();viewWindowData();viewKidsAlertData();">
 
-<div class="bg">
+
 
 <div class="container-fluid bg1">
  
 <div class="row">
-    <div class="col-sm-1">
-    <img id="img3" src="./img/LBSLOGO2.jpg" width="50">
+    <div class="col-lg-1">
+    <img id="img3" src="./img/connected.png" width="110">
     </div>
-    <div class="col-sm-11 text-center">
-     <h3>Location Based Service<small>Smart home Application</small></h3>
+    <div class="col-sm-10 text-center">
+    <br>
+     <div class="text-block">
+     <h2><strong>Mobile Computing Project</strong></h2>
+    <h3><strong>Location Based Service<small>smart home Application</small></strong></h3>
+  </div>
+    
+    </div>
+    
+      <div class="col-lg-1">
+    <img id="img3" src="./img/loc.png" width="110">
     </div>
    
     </div>
 </div> 
 
-	<div class="container-fluid">
+<div class="bg bg0">
+
+	<div class="container">
 		<div class="row">
-			<div class="mt-2 col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h3 class="card-title">DogPositionData</h3>
-						<h6 class="card-subtitle mb-2 text-muted">values in meter</h6>
-						<p id="p1" />
+			<div class="mt-2 col-sm-4" align="center"> 
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Dog Location Data</h3>
+						<img id="img3" src="./img/dog2gif.gif" width="120" height="125">
+						<h6>Distance from Home</h6>
+						<p class="inline" id="p1"></p><p class="inline">m</p>
 
 					</div>
+					</div>
 
-				</div>
-
-			 </div>
-
-			<div class="mt-2 col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h3 class="card-title">Alarm</h3>
-						<img id="img2" width="200">
+			<div class="mt-2 col-sm-4" align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Alarm</h3>
+						<img id="img2" width="100" height="110">
+						<h6>Status</h6>
 						<p id="p2" />
 						
 
 					</div>
 				</div>
-			</div>
+			
 
-			<div class=" mt-2 col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h1 class="card-title">Gate</h1>
+			<div class=" mt-2 col-sm-4" align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h1 class=>Gate</h1>
+							<img id="img4" width="100" height="80"> 
+							<p></p>
+							<h6>Status</h6>
 
 						<p id="p3" />
 
@@ -114,94 +137,124 @@
 				</div>
 
 			</div>
-			</div>
-		</div>
 			
-			<div class= "container-fluid my-3">
+			</div>
+		
+			
+			<div class= "container">
 			
 		
 		<div class="row">
 
-			<div class="col-sm-4">
-				<div class="card bg-secondary text-white" >
-					<div class="card-body" >
-						<h3 class="card-title">User Location Data</h3>
-						<h6 class="card-subtitle mb-2 text-muted">values in meter</h6>
-						<p id="p4" />
+			<div class="col-sm-4"align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+					<h3 >User Location Data</h3>
+						<img id="img3" src="./img/Manwalk1.gif" width="130">
+						<h6>Distance from  Home </h6>
+						<p class="inline" id="p4"></p><p class="inline">m</p>
 
 					</div>
-				</div>
+				
 			</div>
 
-			<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h3 class="card-title">Light</h3>
-						 <img id="img1" width="200">
-
+			<div class="col-sm-4"align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3 >Light</h3>
+						 <img id="img1" width="100" height="120">
+						 <p></p>
+						 <h6>Status</h6>
 						<p id="p5" />
 
 					</div>
 				</div>
+			
+
+			<div class="col-sm-4"align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Window</h3>
+                     <img id="img5" width="110" height="120">
+                     <p></p>
+                     <h6>Status</h6>
+						<p id="p6"></p>
+						 
+					</div> 
+					
+					
+
 			</div>
-
-			<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h3 class="card-title">Heater</h3>
-
-						<p id="p6" />
-					</div>
-					<button id="button5" type="button" onclick="setHeaterData('ON')">Heater
-					ON</button>
-				<button id="button6" type="button" onclick="setHeaterData('OFF')">Heater
-					OFF</button>
-				</div>
-
-			</div>
+			</div> 
 			</div>
 			
-	        <!-- <button id="button1" type="button" onclick="StartDogPosData()">START</button>
-			<button id="button2" type="button" onclick="StopDogPosData()">STOP</button> -->
+			<div class="container">
+			<div class="row">
+			<div class="col-sm-4"align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Kids Location Data</h3>
+                     
+                     <p></p>
+                     <h6>Status</h6>
+						<p id="p7"></p>
+						<input id="t1" name="id" type="text">
+						<button id="b3" type="button" onclick="setKidsData()">Set Location</button>
+						
+		<button id="b1" type="button" onclick="StartKidsData()">View</button>
+		<button id="b2" type="button" onclick="StopKidsData()">Stop</button>
+						 
+					</div> 
+			
+			
+			</div>
+			
+			<div class="col-sm-4"align="center">
+				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Kids Alert data</h3>
+                     
+                     <p></p>
+                     <h6>Status</h6>
+						<p id="p8"></p>
+			
+			
+			</div>
+			</div>
+	        </div>
+	        </div>
 
-			<!-- <div>
-				<button id="button3" type="button" onclick="StartUserPosData()">START</button>
-				<button id="button4" type="button" onclick="StopUserPosData()">STOP</button>
-				<button id="button5" type="button" onclick="setHeaterData('ON')">Heater
-					ON</button>
-				<button id="button6" type="button" onclick="setHeaterData('OFF')">Heater
-					OFF</button>
-			</div> -->
-
-		</div>
 		
-	</div>
 	
-	<footer class="container-fluid bg-4 text-center">
-  <p>Frankfurt University of Applied science</p> 
-</footer>
-	
+	<footer>
+	<div class="container-fluid bg4">
+	<div class="row">
+	<div class="col-sm-1">
+	<img alt="footer" src="./img/FRA2.png" width="120">
+	  </div>
+	  <div class="col-sm-10">
+	<div class="copyright text-center">
+    All Right Reserved &copy; 2020 <span><strong>Frankfurt University of Applied Science</strong></span>
+   
+  </div>
+	  </div>
+	  
+  </div>
+  </div>
+  </footer>
 </body>
 
 <script src="jquery-3.4.1.min.js"></script>
 
 <script>
 
-/* function StartDogPosData() {
-	viewLocationData();
-	viewAlarmData();
-	viewGateData();
-	interval1 = setInterval(viewLocationData,4000);
-	interval2 = setInterval(viewAlarmData,2000);
-	interval3 = setInterval(viewGateData,2000);
+ function StartKidsData() {
+	 viewKidsData();
+	
+	interval1 = setInterval(viewKidsData,1000);
+	
 }
-	function StopDogPosData() {
+	function StopKidsData() {
 		clearInterval(interval1);
-		clearInterval(interval2);
-		clearInterval(interval3);	
+			
 }
 	
-	function StartUserPosData() {
+	/* function StartUserPosData() {
 		viewUserLocationData();
 		viewLightData();
 		viewHeaterData();
@@ -214,10 +267,52 @@
 			clearInterval(interval4);
 			clearInterval(interval5);
 		
-	} */
-		
-		
-
+	} */ 
+	
+	function viewKidsData() {
+		$(document).ready(function () {
+	        $.ajax({
+	            type: "GET",
+	            url: "http://localhost:8080/getKidsData",
+	            contentType: "application/xml",
+	            dataType: "xml",
+	            success: function (xmlData) {                   
+	                console.log(xmlData);                  
+	                $("#p7").text($(xmlData).find("KidsData").text());
+	            },   
+	             /* complete: function(){
+	            	setTimeout(viewKidsData,1000); 
+	            	
+	            }, */
+	            error: function (xhr) {
+	                alert(xhr.responseText);
+	            }
+	        });
+	    });
+	}
+	
+	function viewKidsAlertData() {
+		$(document).ready(function () {
+	        $.ajax({
+	            type: "GET",
+	            url: "http://localhost:8080/getKidsAlert",
+	            contentType: "application/xml",
+	            dataType: "xml",
+	            success: function (xmlData) {                   
+	                console.log(xmlData);                  
+	                $("#p8").text($(xmlData).find("AlertData").text());
+	            },   
+	              complete: function(){
+	            	setTimeout(viewKidsAlertData,1000); 
+	            	
+	            }, 
+	            error: function (xhr) {
+	                alert(xhr.responseText);
+	            }
+	        });
+	    });
+	}
+	
 function viewLocationData() {
 	$(document).ready(function () {
         $.ajax({
@@ -229,10 +324,10 @@ function viewLocationData() {
                 console.log(xmlData);                  
                 $("#p1").text($(xmlData).find("LocationData").text());
             },   
-            complete: function(){
+             complete: function(){
             	setTimeout(viewLocationData,4000);
             	
-            },
+            }, 
             error: function (xhr) {
                 alert(xhr.responseText);
             }
@@ -253,11 +348,11 @@ function viewAlarmData() {
                 
                 if ($(xmlData).find("AlarmData").text() == "ON") {
 
-					$("#img2").attr('src','./img/sirenON.png');
+					$("#img2").attr('src','./img/Alarmonn.PNG');
 				} else if
 					($(xmlData).find("AlarmData").text() == "OFF")
 				{
-					$("#img2").attr('src','./img/sirenOFF.png');
+					$("#img2").attr('src','./img/Alarmoff.PNG');
 				}
             },
             
@@ -281,6 +376,15 @@ function viewGateData() {
             success: function (xmlData) {                   
                 console.log(xmlData);                  
                 $("#p3").text($(xmlData).find("GateData").text());
+
+				if ($(xmlData).find("GateData").text() == "OPEN") {
+
+					$("#img4").attr('src','./img/GateOpen.png');
+				} else if
+					($(xmlData).find("GateData").text() == "CLOSE")
+				{
+					$("#img4").attr('src','./img/gateoff.png');
+				}
             },
             
             complete: function(){
@@ -294,23 +398,27 @@ function viewGateData() {
     });
 }
 
-function setHeaterData(value) {
-	console.log(value);
-	var heatdata ="<HeaterData>" + value + "</HeaterData>";
+
+
+function setKidsData() {
+	var addData = "<KidsData>" + $("#t1").val() + "</KidsData>";
 	$(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/setHeaterData",
+            url: "http://localhost:8080/setKidsData",
             contentType: "application/xml",
             dataType: "xml",
-            data:heatdata,
+            data: addData,
             success: function () {
             	console.log("Success");
                 },
+                complete: function(){
+                	setTimeout(setKidsData,1000);
+                },
+                
             error: function (xhr) {
                 alert(xhr.responseText);
             }
-                
         });
     });
 }
@@ -351,11 +459,11 @@ function viewUserLocationData() {
 
 					if ($(xmlData).find("LightData").text() == "ON") {
 
-						$("#img1").attr('src','./img/LightBulbON.png');
+						$("#img1").attr('src','./img/Bulbon.png');
 					} else if
 						($(xmlData).find("LightData").text() == "OFF")
 					{
-						$("#img1").attr('src','./img/LightBulbOff.png');
+						$("#img1").attr('src','./img/Bulboffn.png');
 					}
 				},
 				complete: function(){
@@ -368,19 +476,27 @@ function viewUserLocationData() {
 		});
 	}
 
-	function viewHeaterData() {
+	function viewWindowData() {
 		$(document).ready(function() {
 			$.ajax({
 				type : "GET",
-				url : "http://localhost:8080/getHeaterData",
+				url : "http://localhost:8080/getWindowData",
 				contentType : "application/xml",
 				dataType : "xml",
 				success : function(xmlData) {
 					console.log(xmlData);
-					$("#p6").text($(xmlData).find("HeaterData").text());
+					$("#p6").text($(xmlData).find("windowData").text());
+					if ($(xmlData).find("windowData").text() == "OPEN") {
+
+						$("#img5").attr('src','./img/Won.png');
+					} else if
+						($(xmlData).find("windowData").text() == "CLOSE")
+					{
+						$("#img5").attr('src','./img/Woff.png');
+					}
 				},
 				 complete: function(){
-		            	setTimeout(viewHeaterData,1000);
+		            	setTimeout(viewWindowData,1000);
 		            	
 		            },
 				error : function(xhr) {

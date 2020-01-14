@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HeaterController {
+public class WindowController {
 	
-	@RequestMapping(value = "/getHeaterData", produces = "application/xml")
+	@RequestMapping(value = "/getWindowData", produces = "application/xml")
 	public String getHeaterData() throws ConnectorException, IOException {
 		
 		String xml = "";
 		
-		CoapClient client1 = new CoapClient("coap://localhost:5693/getHeaterData");
+		CoapClient client1 = new CoapClient("coap://localhost:5693/getWindowData");
         
         CoapResponse response1 = client1.get();
         
@@ -41,28 +41,28 @@ public class HeaterController {
         return xml;
 		
 	}
-	@RequestMapping(method = RequestMethod.POST, value = "/setHeaterData", consumes = "application/xml")
-	public void setHeaterData(@RequestBody String xml) throws ConnectorException, IOException {
-		
-		CoapClient client2 = new CoapClient("coap://localhost:5694/SetHeaterData");
-		
-		JSONObject json = XML.toJSONObject(xml);
-		
-		System.out.println( xml );		
-		System.out.println( json );
-        
-        CoapResponse response2 = client2.post(json.toString(), MediaTypeRegistry.APPLICATION_JSON);
-        
-        if (response2!=null) {        
-        	System.out.println( response2.getCode() );
-        	System.out.println( response2.getOptions() );
-        	System.out.println( response2.getResponseText() );        	
-        }
-        
-        else {        	
-        	System.out.println("Request failed");        	
-        }
-	}
+//	@RequestMapping(method = RequestMethod.POST, value = "/setWindowData", consumes = "application/xml")
+//	public void setHeaterData(@RequestBody String xml) throws ConnectorException, IOException {
+//		
+//		CoapClient client2 = new CoapClient("coap://localhost:5694/SetWindowData");
+//		
+//		JSONObject json = XML.toJSONObject(xml);
+//		
+//		System.out.println( xml );		
+//		System.out.println( json );
+//        
+//        CoapResponse response2 = client2.post(json.toString(), MediaTypeRegistry.APPLICATION_JSON);
+//        
+//        if (response2!=null) {        
+//        	System.out.println( response2.getCode() );
+//        	System.out.println( response2.getOptions() );
+//        	System.out.println( response2.getResponseText() );        	
+//        }
+//        
+//        else {        	
+//        	System.out.println("Request failed");        	
+//        }
+//	}
 
 
 }

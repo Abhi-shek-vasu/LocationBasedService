@@ -17,41 +17,41 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class HeaterSensor {
+public class WindowSensor {
 	
-public HeaterSensor() {
+public WindowSensor() {
 		
 		
 		CoapServer server = new CoapServer(5693);
 				
-				server.add(new getHeaterData());       
+				server.add(new getWindowData());       
 
 		        server.start(); 
-		        System.out.println("Heater sensors started");
+		        System.out.println("Window sensors started");
 			}
 			
 			
-			public class getHeaterData extends CoapResource {
+			public class getWindowData extends CoapResource {
 				
 				
-				public getHeaterData() {
+				public getWindowData() {
 					
-					super("getHeaterData");
+					super("getWindowData");
 				}
 				
 				@Override
 		        public void handleGET(CoapExchange exchange) {
 					
 					
-					StringBuilder HeatStatus= new StringBuilder();
+					StringBuilder WindowStatus= new StringBuilder();
 		        	BufferedWriter bw = null;        	
 		        	BufferedReader br = null;
 		        	
-		        	if(!(new File("HeaterData.txt")).exists())
+		        	if(!(new File("WindowData.txt")).exists())
 		        	{
 		        		try {
-		    	        	bw = new BufferedWriter(new FileWriter(new File("HeaterData.txt")));
-		    	            bw.write("OFF");
+		    	        	bw = new BufferedWriter(new FileWriter(new File("windowData.txt")));
+		    	            bw.write("CLOSE");
 		    	        }
 
 		    	        catch (IOException e) {
@@ -68,11 +68,11 @@ public HeaterSensor() {
 		        	}
 
 		            try {            	
-		            	br = Files.newBufferedReader(Paths.get("HeaterData.txt").toAbsolutePath());
+		            	br = Files.newBufferedReader(Paths.get("windowData.txt").toAbsolutePath());
 
 		                String line;
 		                while ((line = br.readLine()) != null) {
-		                	HeatStatus.append(line);
+		                	WindowStatus.append(line);
 		                }
 		            } 
 		            
@@ -88,9 +88,9 @@ public HeaterSensor() {
 		    			}
 		            }
 
-		            System.out.println(HeatStatus);
+		            System.out.println(WindowStatus);
 
-		    exchange.respond(ResponseCode.CONTENT, "{\"HeaterData\":" + HeatStatus + "}", MediaTypeRegistry.APPLICATION_JSON); 
+		    exchange.respond(ResponseCode.CONTENT, "{\"windowData\":" + WindowStatus + "}", MediaTypeRegistry.APPLICATION_JSON); 
 					
 			}
 			}

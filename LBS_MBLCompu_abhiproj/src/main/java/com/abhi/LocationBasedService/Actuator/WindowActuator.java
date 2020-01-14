@@ -15,25 +15,25 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class HeaterActuator {
+public class WindowActuator {
 	
-	public HeaterActuator() {
+	public WindowActuator() {
 		
 		CoapServer server = new CoapServer(5694);
 		
-		server.add(new SetHeaterData()); 
+		server.add(new SetWindowData()); 
 		System.out.println("Heater Actuator started");
 
         server.start();
 
 	}
 	
-	public static class SetHeaterData extends CoapResource {
-        public SetHeaterData() {
+	public static class SetWindowData extends CoapResource {
+        public SetWindowData() {
         	
-            super("SetHeaterData");
+            super("SetWindowData");
             
-            getAttributes().setTitle("Set Heater Data");
+            getAttributes().setTitle("Set Window Data");
         }
 
         @Override
@@ -43,11 +43,11 @@ public class HeaterActuator {
 			exchange.respond(ResponseCode.CONTENT, "{\"message\":\"POST_REQUEST_SUCCESS\"}", MediaTypeRegistry.APPLICATION_JSON);
 			
 			JSONObject json = new JSONObject(exchange.getRequestText());
-			String data = json.get("HeaterData").toString();
+			String data = json.get("windowData").toString();
 			BufferedWriter bw = null;
 	        
 	        try {
-	        	bw = new BufferedWriter(new FileWriter(new File("HeaterData.txt")));
+	        	bw = new BufferedWriter(new FileWriter(new File("windowData.txt")));
 	            bw.write(data);
 	        } 
 	        
