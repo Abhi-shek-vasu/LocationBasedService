@@ -28,7 +28,7 @@ public KidsAlertSensor() {
 				server.add(new getKidsAlert());       
 
 		        server.start(); 
-		        System.out.println("Light sensors started");
+		        System.out.println("Kids Location sensor started");
 			}
 			
 			

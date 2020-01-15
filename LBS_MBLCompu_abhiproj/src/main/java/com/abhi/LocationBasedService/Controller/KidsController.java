@@ -61,10 +61,12 @@ public class KidsController {
 		
 		System.out.println( xml );		
 		System.out.println( json );
+		
+		System.out.println( json.getJSONObject("data") );
         
         CoapResponse response7=null;
 		try {
-			response7 = client7.post(json.toString(), MediaTypeRegistry.APPLICATION_JSON);
+			response7 = client7.post(json.getJSONObject("data").toString(), MediaTypeRegistry.APPLICATION_JSON);
 		} catch (ConnectorException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,31 +82,30 @@ public class KidsController {
         	System.out.println("Request failed");        	
         }
         
-        CoapClient client9 = new CoapClient("coap://localhost:6000/getKidsLocData");
-		
-		JSONObject jsonGet = new JSONObject();
-        
-        CoapResponse response9=client9.get();       
-        
-        if (response9!=null) {        
-        	System.out.println( response9.getCode() );
-        	System.out.println( response9.getOptions() );
-        	System.out.println( response9.getResponseText() );    
-        	jsonGet = new JSONObject(response9.getResponseText());
-        }
-        
-        else {        	
-        	System.out.println("Request failed");        	
-        }
+//        CoapClient client9 = new CoapClient("coap://localhost:6000/getKidsLocData");
+//		
+//		JSONObject jsonGet = new JSONObject();
+//        
+//        CoapResponse response9=client9.get();       
+//        
+//        if (response9!=null) {        
+//        	System.out.println( response9.getCode() );
+//        	System.out.println( response9.getOptions() );
+//        	System.out.println( response9.getResponseText() );    
+//        	jsonGet = new JSONObject(response9.getResponseText());
+//        }
+//        
+//        else {        	
+//        	System.out.println("Request failed");        	
+//        }
         
         JSONObject jsonPost = new JSONObject();
         
         CoapClient client8 = new CoapClient("coap://localhost:6003/setAlertData");		
-		
-		
-		if(jsonGet.getInt("KidsData") > json.getInt("KidsData"))
+        
+		if(json.getJSONObject("data").getInt("KidsCurrentData") > json.getJSONObject("data").getInt("KidsData"))
 		{
-			jsonPost.put("AlertData", "Kid out of range");
+			jsonPost.put("AlertData", "Alert! Kids out of range");
 		}
 		else
 		{

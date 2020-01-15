@@ -1,252 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 <title>A Mobile Computing Project WebApp</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<script src="jquery-3.4.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 
-<style type="text/css">
-
-
-/* .bg0{
-
-background-image: url("./img/bg.jpeg");
-
-} */
-  
-.myheader{ text-align:center;
-           
+<style>
+.bg0 {
+	background-image: url("./img/bg.jpeg");
 }
 
-#pageheader{
-               text-align:center;
+.myheader {
+	text-align: center;
 }
 
-
-
-.bg-4{
-   background-color: #2f2f2f; 
-    color: #fff;
- 
+#pageheader {
+	text-align: center;
 }
-.bg1{
- 
- background-image: url("./img/IOTbg1.jpg");
 
-} 
+.bg-4 {
+	background-color: #2f2f2f;
+	color: #fff;
+}
 
-
+.bg1 {
+	background-image: url("./img/IOTbg1.jpg");
+}
 
 .text-block {
-  
-  color: white;
-  }
-  footer .copyright {
-  padding: 15px 0;
-  background: #333;
-  margin-top: 20px;
-  font-size: 15px;
+	color: white;
+}
+
+footer .copyright {
+	padding: 15px 0;
+	background: #333;
+	margin-top: 20px;
+	font-size: 15px;
 }
 
 footer {
-  background: #222;
-  color: #aaa;
-  padding-top: 10px;
+	background: #222;
+	color: #aaa;
+	padding-top: 10px;
 }
 
-.h3{
+.h3 {
+	text-align: center;
+}
 
-text-align:center;}
-  
- .inline{
- 
- display:inline;
- }
-  
-
-
+.inline {
+	display: inline;
+}
 </style>
 </head>
-<body onload="viewLocationData();viewGateData();viewAlarmData();viewUserLocationData();viewLightData();viewWindowData();viewKidsAlertData();">
+<body
+	onload="viewLocationData();viewGateData();viewAlarmData();viewUserLocationData();viewLightData();viewWindowData();viewKidsAlertData();">
 
 
 
-<div class="container-fluid bg1">
- 
-<div class="row">
-    <div class="col-lg-1">
-    <img id="img3" src="./img/connected.png" width="110">
-    </div>
-    <div class="col-sm-10 text-center">
-    <br>
-     <div class="text-block">
-     <h2><strong>Mobile Computing Project</strong></h2>
-    <h3><strong>Location Based Service<small>smart home Application</small></strong></h3>
-  </div>
-    
-    </div>
-    
-      <div class="col-lg-1">
-    <img id="img3" src="./img/loc.png" width="110">
-    </div>
-   
-    </div>
-</div> 
+	<div class="container-fluid bg1">
 
-<div class="bg bg0">
-
-	<div class="container">
 		<div class="row">
-			<div class="mt-2 col-sm-4" align="center"> 
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-						<h3>Dog Location Data</h3>
-						<img id="img3" src="./img/dog2gif.gif" width="120" height="125">
-						<h6>Distance from Home</h6>
-						<p class="inline" id="p1"></p><p class="inline">m</p>
-
-					</div>
-					</div>
-
-			<div class="mt-2 col-sm-4" align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-						<h3>Alarm</h3>
-						<img id="img2" width="100" height="110">
-						<h6>Status</h6>
-						<p id="p2" />
-						
-
-					</div>
-				</div>
-			
-
-			<div class=" mt-2 col-sm-4" align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-						<h1 class=>Gate</h1>
-							<img id="img4" width="100" height="80"> 
-							<p></p>
-							<h6>Status</h6>
-
-						<p id="p3" />
-
-					</div>
-
+			<div class="col-lg-1">
+				<img id="img1" alt="IOT connection" src="./img/connected.png"
+					width="110">
+			</div>
+			<div class="col-sm-10 text-center">
+				<br>
+				<div class="text-block">
+					<h2>
+						<strong>Mobile Computing Project</strong>
+					</h2>
+					<h3>
+						<strong>Location Based Service<small>smart home
+								Application</small></strong>
+					</h3>
 				</div>
 
 			</div>
-			
-			</div>
-		
-			
-			<div class= "container">
-			
-		
-		<div class="row">
 
-			<div class="col-sm-4"align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-					<h3 >User Location Data</h3>
-						<img id="img3" src="./img/Manwalk1.gif" width="130">
-						<h6>Distance from  Home </h6>
-						<p class="inline" id="p4"></p><p class="inline">m</p>
-
-					</div>
-				
+			<div class="col-lg-1">
+				<img id="img2" alt="location" src="./img/loc.png" width="110">
 			</div>
 
-			<div class="col-sm-4"align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-						<h3 >Light</h3>
-						 <img id="img1" width="100" height="120">
-						 <p></p>
-						 <h6>Status</h6>
-						<p id="p5" />
+		</div>
+	</div>
 
-					</div>
-				</div>
-			
+	<div class="bg bg0">
 
-			<div class="col-sm-4"align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
-						<h3>Window</h3>
-                     <img id="img5" width="110" height="120">
-                     <p></p>
-                     <h6>Status</h6>
-						<p id="p6"></p>
-						 
-					</div> 
-					
-					
-
-			</div>
-			</div> 
-			</div>
-			
-			<div class="container">
+		<div class="container">
 			<div class="row">
-			<div class="col-sm-4"align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+				<div class="mt-2 col-sm-4 st" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Dog Location Data</h3>
+						<img id="img3" alt="Dog Location" src="./img/dog2gif.gif"
+							width="120" height="125">
+						<h6>Distance from Home</h6>
+						<p class="inline p-2  bg-secondary text-white border-dark rounded"
+							id="p1"></p>
+						<p class="inline">m</p>
+
+					</div>
+				</div>
+
+				<div class="mt-2 col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Alarm</h3>
+						<img id="img4" src="./img/Alarmoff.png" alt="Alarm" width="100"
+							height="110">
+						<h6>Status</h6>
+						<p id="p2">
+					</div>
+				</div>
+
+
+				<div class=" mt-2 col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h1>Gate</h1>
+						<img id="img5" src="./img/gateoff.png" alt="Gate" width="100"
+							height="80">
+						<p></p>
+						<h6>Status</h6>
+
+						<p id="p3">
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="container">
+	          <div class="row">
+
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>User Location Data</h3>
+						<img id="img6" src="./img/Manwalk1.gif" alt="Man walk" width="130">
+						<h6>Distance from Home</h6>
+						<p
+							class="inline border p-2  bg-secondary text-white border-dark rounded"
+							id="p4"></p>
+						<p class="inline">m</p>
+
+					</div>
+				</div>
+
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Light</h3>
+						<img id="img7" src="./img/Bulboffn.png" alt="Bulb" width="100"
+							height="120">
+						<p></p>
+						<h6>Status</h6>
+						<p id="p5">
+					</div>
+				</div>
+
+
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Window</h3>
+						<img id="img8" src="./img/Woff.png" alt="window" width="110"
+							height="120">
+						<p></p>
+						<h6>Status</h6>
+						<p id="p6"></p>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
 						<h3>Kids Location Data</h3>
-                     
-                     <p></p>
-                     <h6>Status</h6>
-						<p id="p7"></p>
-						<input id="t1" name="id" type="text">
-						<button id="b3" type="button" onclick="setKidsData()">Set Location</button>
-						
-		<button id="b1" type="button" onclick="StartKidsData()">View</button>
-		<button id="b2" type="button" onclick="StopKidsData()">Stop</button>
-						 
-					</div> 
-			
-			
-			</div>
-			
-			<div class="col-sm-4"align="center">
-				<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<img id="img9" alt="Kid Image" src="./img/kidsplay.gif"
+							width="100" height="120">
+							<p></p>
+						<h6>Distance from Home</h6>
+						<p></p>
+
+						<p class="inline p-2  bg-secondary text-white border-dark rounded" id="p7" ></p>
+						<p class="inline">m</p>
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
+						<h3>Control Kids Location</h3>
+						<input id="t1" name="id" type="text" placeholder="Enter Location(in meter)">
+						<!-- 						<button id="b3" type="button" onclick="setKidsData()" style="background-color:#34495E; color:white">Set Location</button> -->
+						<p></p>
+						<button id="b1" type="button" onclick="StartKidsData()"
+							style="background-color: #34495E; color: white">Set
+							Location</button>
+						<button id="b2" type="button" onclick="StopKidsData()"
+							style="background-color: #34495E; color: white">Stop</button>
+
+						<p></p>
+
+					</div>
+				</div>
+
+				<div class="col-sm-4" style="text-align: center;">
+					<div class="shadow-lg p-3 mb-5 bg-white rounded">
 						<h3>Kids Alert data</h3>
-                     
-                     <p></p>
-                     <h6>Status</h6>
+						<img id="img10" src="./img/safe_zone.png" alt="Alert" width="100"
+							height="110">
+						<p></p>
+						<h6>Status</h6>
 						<p id="p8"></p>
-			
-			
-			</div>
-			</div>
-	        </div>
-	        </div>
 
-		
-	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<footer>
-	<div class="container-fluid bg4">
-	<div class="row">
-	<div class="col-sm-1">
-	<img alt="footer" src="./img/FRA2.png" width="120">
-	  </div>
-	  <div class="col-sm-10">
-	<div class="copyright text-center">
-    All Right Reserved &copy; 2020 <span><strong>Frankfurt University of Applied Science</strong></span>
-   
-  </div>
-	  </div>
-	  
-  </div>
-  </div>
-  </footer>
-</body>
+		<div class="container-fluid bg4">
+			<div class="row">
+				<div class="col-sm-1">
+					<img alt="footer" src="./img/FRA2.png" width="120" height="160">
+				</div>
+				<div class="col-sm-10">
+					<div class="copyright text-center">
+						All Right Reserved &copy; 2020 <span><strong>Frankfurt
+								University of Applied Science</strong></span>
+								<br>
+								<p class="inline">Full Name :</p><p class="inline"><strong>Abhishek Sharma</strong></p><br>
+								<p class="inline">Matriculation Number:</p><p><strong>1274291</strong></p>
 
-<script src="jquery-3.4.1.min.js"></script>
+					</div>
+				</div>
 
-<script>
+			</div>
+		</div>
+	</footer>
+
+
+	<script>
 
  function StartKidsData() {
 	 viewKidsData();
 	
-	interval1 = setInterval(viewKidsData,1000);
+	interval1 = setInterval(viewKidsData,5000);
 	
 }
 	function StopKidsData() {
@@ -254,20 +266,7 @@ text-align:center;}
 			
 }
 	
-	/* function StartUserPosData() {
-		viewUserLocationData();
-		viewLightData();
-		viewHeaterData();
-		interval4 = setInterval(viewUserLocationData,4000);
-		interval5 = setInterval(viewLightData,2000);
-		interval6 = setInterval(viewHeaterData,2000);
-	}
 	
-		function StopUserPosData() {
-			clearInterval(interval4);
-			clearInterval(interval5);
-		
-	} */ 
 	
 	function viewKidsData() {
 		$(document).ready(function () {
@@ -279,6 +278,25 @@ text-align:center;}
 	            success: function (xmlData) {                   
 	                console.log(xmlData);                  
 	                $("#p7").text($(xmlData).find("KidsData").text());
+	                
+	            	var addData = "<data><KidsData>" + $("#t1").val() + "</KidsData><KidsCurrentData>" + $(xmlData).find("KidsData").text() + "</KidsCurrentData></data>";
+	            	$(document).ready(function () {
+	                    $.ajax({
+	                        type: "POST",
+	                        url: "http://localhost:8080/setKidsData",
+	                        contentType: "application/xml",
+	                        dataType: "xml",
+	                        data: addData,
+	                        success: function () {
+	                        	console.log("Success");
+	                            },
+	                            
+	                        error: function (xhr) {
+	                            alert(xhr.responseText);
+	                        }
+	                    });
+	                });
+	                
 	            },   
 	             /* complete: function(){
 	            	setTimeout(viewKidsData,1000); 
@@ -301,9 +319,18 @@ text-align:center;}
 	            success: function (xmlData) {                   
 	                console.log(xmlData);                  
 	                $("#p8").text($(xmlData).find("AlertData").text());
+	                if ($(xmlData).find("AlertData").text() == "Alert! Kids out of range") {
+
+						$("#img10").attr('src','./img/Alert.png');
+					} else if
+						($(xmlData).find("AlertData").text() == "Kids Under Defined Location")
+					{
+						$("#img10").attr('src','./img/safe_zone.png');
+					}
 	            },   
 	              complete: function(){
 	            	setTimeout(viewKidsAlertData,1000); 
+	            	
 	            	
 	            }, 
 	            error: function (xhr) {
@@ -348,11 +375,11 @@ function viewAlarmData() {
                 
                 if ($(xmlData).find("AlarmData").text() == "ON") {
 
-					$("#img2").attr('src','./img/Alarmonn.PNG');
+					$("#img4").attr('src','./img/Alarmonn.PNG');
 				} else if
 					($(xmlData).find("AlarmData").text() == "OFF")
 				{
-					$("#img2").attr('src','./img/Alarmoff.PNG');
+					$("#img4").attr('src','./img/Alarmoff.PNG');
 				}
             },
             
@@ -365,6 +392,8 @@ function viewAlarmData() {
         });
     });
 }
+
+var value;
 
 function viewGateData() {
 	$(document).ready(function () {
@@ -379,11 +408,11 @@ function viewGateData() {
 
 				if ($(xmlData).find("GateData").text() == "OPEN") {
 
-					$("#img4").attr('src','./img/GateOpen.png');
+					$("#img5").attr('src','./img/GateOpen.png');
 				} else if
 					($(xmlData).find("GateData").text() == "CLOSE")
 				{
-					$("#img4").attr('src','./img/gateoff.png');
+					$("#img5").attr('src','./img/gateoff.png');
 				}
             },
             
@@ -400,28 +429,28 @@ function viewGateData() {
 
 
 
-function setKidsData() {
-	var addData = "<KidsData>" + $("#t1").val() + "</KidsData>";
-	$(document).ready(function () {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/setKidsData",
-            contentType: "application/xml",
-            dataType: "xml",
-            data: addData,
-            success: function () {
-            	console.log("Success");
-                },
-                complete: function(){
-                	setTimeout(setKidsData,1000);
-                },
+// function setKidsData() {
+// 	var addData = "<data><KidsData>" + $("#t1").val() + "</KidsData><KidsCurrentData>" + $("#p7").val() + "</KidsCurrentData></data>";
+// 	$(document).ready(function () {
+//         $.ajax({
+//             type: "POST",
+//             url: "http://localhost:8080/setKidsData",
+//             contentType: "application/xml",
+//             dataType: "xml",
+//             data: addData,
+//             success: function () {
+//             	console.log("Success");
+//                 },
+//                 complete: function(){
+//                 	setTimeout(setKidsData,1000);
+//                 },
                 
-            error: function (xhr) {
-                alert(xhr.responseText);
-            }
-        });
-    });
-}
+//             error: function (xhr) {
+//                 alert(xhr.responseText);
+//             }
+//         });
+//     });
+// }
 
 function viewUserLocationData() {
 	$(document).ready(function () {
@@ -459,11 +488,11 @@ function viewUserLocationData() {
 
 					if ($(xmlData).find("LightData").text() == "ON") {
 
-						$("#img1").attr('src','./img/Bulbon.png');
+						$("#img7").attr('src','./img/Bulbon.png');
 					} else if
 						($(xmlData).find("LightData").text() == "OFF")
 					{
-						$("#img1").attr('src','./img/Bulboffn.png');
+						$("#img7").attr('src','./img/Bulboffn.png');
 					}
 				},
 				complete: function(){
@@ -488,11 +517,11 @@ function viewUserLocationData() {
 					$("#p6").text($(xmlData).find("windowData").text());
 					if ($(xmlData).find("windowData").text() == "OPEN") {
 
-						$("#img5").attr('src','./img/Won.png');
+						$("#img8").attr('src','./img/Won.png');
 					} else if
 						($(xmlData).find("windowData").text() == "CLOSE")
 					{
-						$("#img5").attr('src','./img/Woff.png');
+						$("#img8").attr('src','./img/Woff.png');
 					}
 				},
 				 complete: function(){
@@ -505,5 +534,7 @@ function viewUserLocationData() {
 			});
 		});
 	}
+	
 </script>
+</body>
 </html>

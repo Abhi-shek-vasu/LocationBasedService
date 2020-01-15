@@ -19,7 +19,7 @@ public class AlarmController {
 		public String getAlarmData() throws ConnectorException, IOException {
 			
 			String xml = "";
-			
+			try {
 			CoapClient client2 = new CoapClient("coap://localhost:5686/getAlarmData");
 	        
 	        CoapResponse response2 = client2.get();
@@ -36,6 +36,11 @@ public class AlarmController {
 	        else {        	
 	        	System.out.println("Request failed");        	
 	        }
+			}
+			catch(Exception e) {
+				
+				e.printStackTrace();
+			}
 	        
 	        return xml;
 			

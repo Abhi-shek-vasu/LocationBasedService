@@ -34,7 +34,7 @@ public class AlarmActuator {
 	        	
 	            super("setAlarmData");
 	            
-	            getAttributes().setTitle("Set Sensor Data");
+	            getAttributes().setTitle("Set Alarm sor Data");
 	        }
 
 	        @Override

@@ -18,7 +18,7 @@ public class UserLocationController {
 	public String getSensorData() throws ConnectorException, IOException {
 		
 		String xml = "";
-		
+		try {
 		CoapClient client1 = new CoapClient("coap://localhost:5690/getUserLocData");
         
         CoapResponse response1 = client1.get();
@@ -55,6 +55,10 @@ public class UserLocationController {
         else {        	
         	System.out.println("Request failed");        	
         }
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
         
         return xml;
 		

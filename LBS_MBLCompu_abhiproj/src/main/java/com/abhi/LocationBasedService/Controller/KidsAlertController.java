@@ -17,7 +17,7 @@ public class KidsAlertController {
 	public String getLocationData() throws ConnectorException, IOException {
 		
 		String xml = "";
-		
+		try {
 		CoapClient client3 = new CoapClient("coap://localhost:6002/getKidsAlert");
         
         CoapResponse response3 = client3.get();
@@ -32,8 +32,13 @@ public class KidsAlertController {
         }
         
         else {        	
-        	System.out.println("Request failed");        	
+        	System.out.println("Request failed");   
         }
+        }catch(Exception e)
+        {
+          e.printStackTrace();	
+        }
+        
         
         return xml;
 		

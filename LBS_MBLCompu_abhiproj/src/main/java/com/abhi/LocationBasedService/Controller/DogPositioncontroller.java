@@ -1,11 +1,11 @@
 package com.abhi.LocationBasedService.Controller;
 
-import java.io.IOException;
+
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResponse;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
-import org.eclipse.californium.elements.exception.ConnectorException;
+
 import org.json.JSONObject;
 import org.json.XML;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DogPositioncontroller {
 
 	@RequestMapping(value = "/getLocData", produces = "application/xml")
-	public String getLocationData() throws ConnectorException, IOException {
+	public String getLocationData() {
 		
 		String xml = "";
-		
+		try {
 		CoapClient client1 = new CoapClient("coap://localhost:5685/getLocData");
         
         CoapResponse response1 = client1.get();
@@ -57,6 +57,12 @@ public class DogPositioncontroller {
         else {        	
         	System.out.println("Request failed");        	
         }
+		}
+        catch(Exception e){
+        	e.printStackTrace();
+        }
+        
+		
         
         return xml;
 		

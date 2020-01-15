@@ -50,7 +50,7 @@ public KidsLocationSensor() {
 				
 					
 					ArrayList<String> data = new ArrayList<>();
-					data.add("5");data.add("10");
+					data.add("5");data.add("10");data.add("20");data.add("30");data.add("50");data.add("40");
                      
 		
 			

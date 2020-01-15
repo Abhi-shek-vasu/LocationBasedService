@@ -16,7 +16,7 @@ public class GateController {
 		public String getLocationData() throws ConnectorException, IOException {
 			
 			String xml = "";
-			
+			try {
 			CoapClient client3 = new CoapClient("coap://localhost:5687/getGateData");
 	        
 	        CoapResponse response3 = client3.get();
@@ -33,6 +33,10 @@ public class GateController {
 	        else {        	
 	        	System.out.println("Request failed");        	
 	        }
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 	        
 	        return xml;
 			
