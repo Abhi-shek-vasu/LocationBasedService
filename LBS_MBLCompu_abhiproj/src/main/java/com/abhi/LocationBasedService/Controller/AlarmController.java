@@ -10,10 +10,12 @@ import org.json.XML;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/*Rest controller spring anotation used for Rest call. It act as  a IOT Gateway(protocol translation)
+ * It handel Http Get request from client(browser) */
 @RestController
 public class AlarmController {
 	
-	
+//  Mapping Request URI and returning xml data 
 
 		@RequestMapping(value = "/getAlarmData", produces = "application/xml")
 		public String getAlarmData() throws ConnectorException, IOException {
@@ -29,8 +31,8 @@ public class AlarmController {
 	        	System.out.println( response2.getOptions() );
 	        	System.out.println( response2.getResponseText() );
 	        	JSONObject json = new JSONObject(response2.getResponseText());
-	        	xml = XML.toString( json );
-	        	System.out.println( xml );        	
+	        	xml = XML.toString( json );//json to xml conversion 
+	        	System.out.println( xml );       	
 	        }
 	        
 	        else {        	

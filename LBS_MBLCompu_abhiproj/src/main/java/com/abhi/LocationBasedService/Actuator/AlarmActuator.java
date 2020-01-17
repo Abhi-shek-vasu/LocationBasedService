@@ -14,6 +14,8 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 
+//creating  alarm actuator class
+//component is used to treat this class as bean class for component scan
 @Component
 public class AlarmActuator {
 	
@@ -22,7 +24,7 @@ public class AlarmActuator {
 			
 			CoapServer server = new CoapServer(5688);
 			
-			server.add(new SetAlarmData());       
+			server.add(new SetAlarmData());       //creating coap resource
 
 	        server.start();
 	        System.out.println("Alarm Actuator started");
@@ -36,7 +38,7 @@ public class AlarmActuator {
 	            
 	            getAttributes().setTitle("Set Alarm sor Data");
 	        }
-
+	      //inbuilt method of coapResource handel caop post request
 	        @Override
 	        public void handlePOST(CoapExchange exchange) {	
 	        	

@@ -13,7 +13,8 @@ import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-
+//creating  actuator class
+//component is used to treat this class as bean class for component scan
 
 @Component
 public class KidsAlertActuator {
@@ -22,7 +23,7 @@ public class KidsAlertActuator {
 		
 		CoapServer server = new CoapServer(6003);
 		
-		server.add(new SetAlertData()); 
+		server.add(new SetAlertData()); //creating coap resource
 		System.out.println("Alert Actuator started");
 
         server.start();
@@ -36,7 +37,7 @@ public class KidsAlertActuator {
             
             getAttributes().setTitle("Set Alert Data");
         }
-
+      //inbuilt method of coapResource handel caop post request
         @Override
         public void handlePOST(CoapExchange exchange) {	
         	

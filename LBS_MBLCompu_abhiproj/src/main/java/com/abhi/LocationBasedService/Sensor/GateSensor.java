@@ -14,7 +14,8 @@ import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.springframework.stereotype.Component;
-
+//creating  sensor class
+//component is used to treat this class as bean class for component scan
 @Component
 public class GateSensor {
 	
@@ -22,15 +23,15 @@ public class GateSensor {
 	public GateSensor() {
 		
 		
-		CoapServer server = new CoapServer(5687);
+		CoapServer server = new CoapServer(5687);//defining new server
 				
-				server.add(new getGateData());       
+				server.add(new getGateData());       //calling the constructor of inner class getGateData
 
 		        server.start();  
 		        System.out.println("gate Actuator started");
 			}
 			
-			
+			//inner  class
 			public class getGateData extends CoapResource {
 				
 				
@@ -38,7 +39,7 @@ public class GateSensor {
 					
 					super("getGateData");
 				}
-				
+				//inbuilt method of coapResource handel caop get request.logic to return sensor value comes under this
 				@Override
 		        public void handleGET(CoapExchange exchange) {
 					StringBuilder sb = new StringBuilder();

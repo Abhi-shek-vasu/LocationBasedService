@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+/*Rest controller spring anotation used for Rest call. It act as  a IOT Gateway(protocol translation)
+ * It handel Http Get request from client(browser) */
 @RestController
+
 public class KidsController {
 
+//  Mapping Request URI and returning xml data 
 	@RequestMapping(value = "/getKidsData", produces = "application/xml")
 	public String getLocationData() 
 	{
@@ -34,7 +37,6 @@ public class KidsController {
         	JSONObject json = new JSONObject(response6.getResponseText());
         	xml = XML.toString( json );
         	System.out.println( xml );  
-        	
         	
         }
         
@@ -68,7 +70,7 @@ public class KidsController {
 		try {
 			response7 = client7.post(json.getJSONObject("data").toString(), MediaTypeRegistry.APPLICATION_JSON);
 		} catch (ConnectorException | IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
         
@@ -82,22 +84,7 @@ public class KidsController {
         	System.out.println("Request failed");        	
         }
         
-//        CoapClient client9 = new CoapClient("coap://localhost:6000/getKidsLocData");
-//		
-//		JSONObject jsonGet = new JSONObject();
-//        
-//        CoapResponse response9=client9.get();       
-//        
-//        if (response9!=null) {        
-//        	System.out.println( response9.getCode() );
-//        	System.out.println( response9.getOptions() );
-//        	System.out.println( response9.getResponseText() );    
-//        	jsonGet = new JSONObject(response9.getResponseText());
-//        }
-//        
-//        else {        	
-//        	System.out.println("Request failed");        	
-//        }
+      
         
         JSONObject jsonPost = new JSONObject();
         
@@ -116,7 +103,7 @@ public class KidsController {
 		try {
 			response8= client8.post(jsonPost.toString(), MediaTypeRegistry.APPLICATION_JSON);
 		} catch (ConnectorException | IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
         

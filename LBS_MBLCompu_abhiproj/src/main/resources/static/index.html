@@ -184,7 +184,7 @@ footer {
 				<div class="col-sm-4" style="text-align: center;">
 					<div class="shadow-lg p-3 mb-5 bg-white rounded">
 						<h3>Kids Location Data</h3>
-						<img id="img9" alt="Kid Image" src="./img/kidsplay.gif"
+						<img id="img9" alt="KidImage" src="./img/kids.gif"
 							width="100" height="120">
 							<p></p>
 						<h6>Distance from Home</h6>
@@ -201,7 +201,7 @@ footer {
 					<div class="shadow-lg p-3 mb-5 bg-white rounded">
 						<h3>Control Kids Location</h3>
 						<input id="t1" name="id" type="text" placeholder="Enter Location(in meter)">
-						<!-- 						<button id="b3" type="button" onclick="setKidsData()" style="background-color:#34495E; color:white">Set Location</button> -->
+						
 						<p></p>
 						<button id="b1" type="button" onclick="StartKidsData()"
 							style="background-color: #34495E; color: white">Set
@@ -267,7 +267,6 @@ footer {
 }
 	
 	
-	
 	function viewKidsData() {
 		$(document).ready(function () {
 	        $.ajax({
@@ -298,10 +297,7 @@ footer {
 	                });
 	                
 	            },   
-	             /* complete: function(){
-	            	setTimeout(viewKidsData,1000); 
-	            	
-	            }, */
+	             
 	            error: function (xhr) {
 	                alert(xhr.responseText);
 	            }
@@ -429,28 +425,6 @@ function viewGateData() {
 
 
 
-// function setKidsData() {
-// 	var addData = "<data><KidsData>" + $("#t1").val() + "</KidsData><KidsCurrentData>" + $("#p7").val() + "</KidsCurrentData></data>";
-// 	$(document).ready(function () {
-//         $.ajax({
-//             type: "POST",
-//             url: "http://localhost:8080/setKidsData",
-//             contentType: "application/xml",
-//             dataType: "xml",
-//             data: addData,
-//             success: function () {
-//             	console.log("Success");
-//                 },
-//                 complete: function(){
-//                 	setTimeout(setKidsData,1000);
-//                 },
-                
-//             error: function (xhr) {
-//                 alert(xhr.responseText);
-//             }
-//         });
-//     });
-// }
 
 function viewUserLocationData() {
 	$(document).ready(function () {
@@ -517,11 +491,11 @@ function viewUserLocationData() {
 					$("#p6").text($(xmlData).find("windowData").text());
 					if ($(xmlData).find("windowData").text() == "OPEN") {
 
-						$("#img8").attr('src','./img/Won.png');
+						$("#img8").attr('src','./img/Woff.png');
 					} else if
 						($(xmlData).find("windowData").text() == "CLOSE")
 					{
-						$("#img8").attr('src','./img/Woff.png');
+						$("#img8").attr('src','./img/Won.png');
 					}
 				},
 				 complete: function(){

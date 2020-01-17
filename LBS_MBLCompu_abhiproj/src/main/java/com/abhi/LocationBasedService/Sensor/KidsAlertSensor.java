@@ -16,22 +16,23 @@ import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.springframework.stereotype.Component;
 
 
-
+//creating   sensor class
+//component is used to treat this class as bean class for component scan
 @Component
 public class KidsAlertSensor {
 	
 public KidsAlertSensor() {
 		
 		
-		CoapServer server = new CoapServer(6002);
+		CoapServer server = new CoapServer(6002);//defining new server
 				
-				server.add(new getKidsAlert());       
+				server.add(new getKidsAlert());       //calling the constructor of inner class getAlert
 
 		        server.start(); 
 		        System.out.println("Kids Location sensor started");
 			}
 			
-			
+			//inner class
 			public class getKidsAlert extends CoapResource {
 				
 				
@@ -39,7 +40,7 @@ public KidsAlertSensor() {
 					
 					super("getKidsAlert");
 				}
-				
+				//inbuilt method of coapResource handel caop get request.logic to return sensor value comes under this
 				@Override
 		        public void handleGET(CoapExchange exchange) {
 					

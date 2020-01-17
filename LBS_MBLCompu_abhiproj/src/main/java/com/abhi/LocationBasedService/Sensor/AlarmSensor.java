@@ -15,31 +15,33 @@ import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.springframework.stereotype.Component;
 
-
+//creating  alarm sensor class
+//component is used to treat this class as bean class for component scan
 @Component
 public class AlarmSensor {
 	
-	
+	//constructor
 	public AlarmSensor() {
 		
 		
-		CoapServer server = new CoapServer(5686);
+		CoapServer server = new CoapServer(5686);//defining new server
 				
-				server.add(new getAlarmData());       
+				server.add(new getAlarmData());  //calling the constructor of inner class getAlarmData     
 
 		        server.start(); 
 		        System.out.println("Alarm sensors started");
 			}
 			
-			
+			//inner class 
 			public class getAlarmData extends CoapResource {
 				
-				
+				//creating coap  resource "getAlarmData" 
 				public getAlarmData() {
 					
 					super("getAlarmData");
 				}
 				
+				//inbuilt method of coapResource handel caop get request.logic to return sensor value comes under this
 				@Override
 		        public void handleGET(CoapExchange exchange) {
 					

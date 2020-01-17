@@ -11,18 +11,19 @@ import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 
-import com.abhi.LocationBasedService.Sensor.KidsLocationSensor;
 
+//creating  alarm actuator class
+//component is used to treat this class as bean class for component scan
 @Component
 public class KidsSafetyActuator {
 public KidsSafetyActuator() {
 		
 		CoapServer server = new CoapServer(6001);
 		
-		server.add(new SetKidsData()); 
+		server.add(new SetKidsData()); //creating coap resource
 		System.out.println("Kids Actuator started");
 
         server.start();
@@ -36,9 +37,9 @@ public KidsSafetyActuator() {
             
             getAttributes().setTitle("Set Kids Data");
         }
-
+      //inbuilt method of coapResource handel caop post request
+        
         @Override
-       
         public void handlePOST(CoapExchange exchange) {	
         	
 			System.out.println(exchange.getRequestText());			

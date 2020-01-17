@@ -14,7 +14,8 @@ import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
-
+//creating  Gate actuator class
+//component is used to treat this class as bean class for component scan
 
 @Component
 public class GateActuator {
@@ -24,7 +25,7 @@ public class GateActuator {
 			
 			CoapServer server = new CoapServer(5689);
 			
-			server.add(new SetGateData()); 
+			server.add(new SetGateData()); //creating coap resource
 			System.out.println("Gate Actuator started");
 
 	        server.start();
@@ -38,7 +39,7 @@ public class GateActuator {
 	            
 	            getAttributes().setTitle("Set Sensor Data");
 	        }
-
+	      //inbuilt method of coapResource handel caop post request
 	        @Override
 	        public void handlePOST(CoapExchange exchange) {	
 	        	

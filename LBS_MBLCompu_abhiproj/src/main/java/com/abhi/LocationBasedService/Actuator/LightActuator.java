@@ -12,7 +12,8 @@ import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
-
+//creating  alarm actuator class
+//component is used to treat this class as bean class for component scan
 @Component
 public class LightActuator {
 	
@@ -21,7 +22,7 @@ public class LightActuator {
 			
 			CoapServer server = new CoapServer(5692);
 			
-			server.add(new SetLightData()); 
+			server.add(new SetLightData()); //creating coap resource
 			System.out.println("Light Actuator started");
 
 	        server.start();
@@ -36,6 +37,8 @@ public class LightActuator {
 	            getAttributes().setTitle("Set Sensor Data");
 	        }
 
+	        //inbuilt method of coapResource handel caop post request
+	          
 	        @Override
 	        public void handlePOST(CoapExchange exchange) {	
 	        	

@@ -2,6 +2,7 @@ package com.abhi.LocationBasedService.Controller;
 
 import java.io.IOException;
 
+
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResponse;
 
@@ -13,8 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+/*Rest controller spring anotation used for Rest call. It act as  a IOT Gateway(protocol translation)
+ * It handel Http Get request from client(browser) */
+
 @RestController
 public class WindowController {
+//  Mapping Request URI and returning xml data 
 	
 	@RequestMapping(value = "/getWindowData", produces = "application/xml")
 	public String getHeaterData() throws ConnectorException, IOException {
@@ -30,7 +35,7 @@ public class WindowController {
         	System.out.println( response1.getOptions() );
         	System.out.println( response1.getResponseText() );
         	JSONObject json = new JSONObject(response1.getResponseText());
-        	xml = XML.toString( json );
+        	xml = XML.toString( json );//json to xml conversion
         	System.out.println( xml ); 
         }
         

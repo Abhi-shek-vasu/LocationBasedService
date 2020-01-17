@@ -15,22 +15,23 @@ import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.springframework.stereotype.Component;
 
-
+//creating   sensor class
+//component is used to treat this class as bean class for component scan
 @Component
 public class WindowSensor {
 	
 public WindowSensor() {
 		
 		
-		CoapServer server = new CoapServer(5693);
+		CoapServer server = new CoapServer(5693);//defining new server
 				
-				server.add(new getWindowData());       
+				server.add(new getWindowData());  //calling the constructor of inner class getWindowData     
 
 		        server.start(); 
 		        System.out.println("Window sensors started");
 			}
 			
-			
+//inner class
 			public class getWindowData extends CoapResource {
 				
 				
@@ -38,6 +39,7 @@ public WindowSensor() {
 					
 					super("getWindowData");
 				}
+				//inbuilt method of coapResource handel caop get request.logic to return sensor value comes under this
 				
 				@Override
 		        public void handleGET(CoapExchange exchange) {

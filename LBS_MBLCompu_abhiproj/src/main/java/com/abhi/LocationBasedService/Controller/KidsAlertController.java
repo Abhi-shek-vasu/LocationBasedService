@@ -10,8 +10,12 @@ import org.json.XML;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/*Rest controller spring anotation used for Rest call. It act as  a IOT Gateway(protocol translation)
+ * It handel Http Get request from client(browser) */
 @RestController
 public class KidsAlertController {
+	
+//  Mapping Request URI and returning xml data 
 	
 	@RequestMapping(value = "/getKidsAlert", produces = "application/xml")
 	public String getLocationData() throws ConnectorException, IOException {
