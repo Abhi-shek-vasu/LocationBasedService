@@ -23,7 +23,7 @@ public class WindowActuator {
 		CoapServer server = new CoapServer(5694);
 		
 		server.add(new SetWindowData()); //creating coap resource
-		System.out.println("Heater Actuator started");
+		
 
         server.start();
 
